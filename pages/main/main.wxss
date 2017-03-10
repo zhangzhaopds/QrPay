@@ -1,0 +1,47 @@
+/* pages/main/main.wxss */
+/* #efeff4  border-bottom: 1rpx solid #e5e5e5;  */
+.container-box{
+    background-color: #efeff4; 
+    height: 100vh
+}
+.img-box{
+    padding: 32rpx;
+    background-color: #fff;
+    
+    position: relative
+}
+.img-box image{
+    width: 686rpx;
+    height: 686rpx;
+    background-color: #f9f9f9
+}
+.input-row{
+    margin: 30rpx auto;
+    display: flex;
+    align-items: center;
+    padding: 0 32rpx; 
+    text-align: center;
+    font-size: 20rpx;
+    color: #000;
+    background-color: white;
+    height: 80rpx;  
+}
+
+
+.input-row input{
+    margin-left: 100rpx;
+    flex: 1
+}
+.mybtn{
+    width:686rpx;
+    margin: 60rpx auto 
+}
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
