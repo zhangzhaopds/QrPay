@@ -7,8 +7,10 @@
             <image class="home-next-btn" src="../../images/next.png"></image>
         </view>
         <view hidden="{{isShowMsg}}">
-            <textarea bindinput="bindInput" placeholder="请输入二维码的文本内容"/>
+            <textarea maxlength="-1" bindinput="bindInput" class="recognize-content" placeholder="请输入二维码的文本内容"/>
+            <view class="home-clear"><text  hidden="{{showClear}}" bindtap="bindClearAll">CLEAR</text></view>
         </view>
+        
     </view>
     <!--识别器-->
     <view class="home-section">
@@ -17,7 +19,7 @@
             <image class="home-next-btn" src="../../images/next.png"></image>
         </view>
         <view hidden="{{isShowResult}}" class="recog-text">
-            <textarea value="{{recognizeMsg}}" disabled='false' />
+            <textarea maxlength="-1" value="{{recognizeMsg}}" class="recognize-content"/>
         </view>
     </view>
 </view>

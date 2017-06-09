@@ -1,12 +1,11 @@
-<!--pages/main/main.wxml-->
-<view class="container-box">
-    <view class="img-box">
-        <canvas bindtap="previewImg" hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/>
+<view class="qrcode-box">
+  <view class="qrcode-container">
+    <view class="qrcode-top">
+      <text>二维码</text>
     </view>
-   
-    <view class="input-row">
-         <label>点击二维码，在弹出的界面长按二维码，即可选择分享或保存图片</label>
+    <canvas bindtap="previewImg" canvas-id="mycanvas" class="qrcode"/>
+    <view class="qrcode-bottom">
+      <view>点击图片可下载与分享</view>
     </view>
+  </view> 
 </view>
-<view hidden="{{maskHidden}}" class="mask"></view>
-<view class="canvas-box"></view>

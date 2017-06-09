@@ -14,6 +14,13 @@
     color: #217834;
     padding-left: 30rpx;
 }
+.recognize-content {
+  padding: 10px;
+}
+.recognize-content-hidden {
+  padding: 10px;
+  color: #e5e5e5;
+}
 
 .home-section-title-recognize {
     color: #E1C26F;
@@ -44,4 +51,14 @@
 
 .recog-text {
     font-size-adjust: true
+}
+.home-clear {
+  font-size: x-small;
+  color: #ff7069;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-right: 10px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
 }

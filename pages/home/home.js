@@ -5,6 +5,7 @@ Page({
     recognizeMsg: '',
     isShowMsg: false,
     isShowResult: false,
+    showClear: true,
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -36,8 +37,8 @@ Page({
     if (this.data.qrMsg == "") {
       wx.showToast({
         title: '二维码内容不能为空',
-        icon: '',
-        duration: 2000
+        icon: 'loading',
+        duration: 500
       })
       return
     }
@@ -59,6 +60,22 @@ Page({
     console.log(e.detail.value)
     this.setData({
       qrMsg: e.detail.value
+    })
+    if (this.data['qrMsg'].length > 1) {
+      this.setData({
+        showClear: false
+      })
+    } else {
+      this.setData({
+        showClear: true
+      })
+    }
+  },
+
+  // 清空
+  bindClearAll: function(res) {
+    wx.redirectTo({
+      url: '../home/home',
     })
   },
 
@@ -85,5 +102,6 @@ Page({
         // complete
       }
     })
-  }
+  },
+  
 })
