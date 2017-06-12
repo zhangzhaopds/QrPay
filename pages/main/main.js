@@ -22,9 +22,6 @@ Page({
     } else {
       QR.qrApi.draw(this.data.inputContent, 'mycanvas', 300, 300)
     }
-    
-    // 
-    
   },
   
   //点击图片进行预览，长按保存分享图片
@@ -32,7 +29,7 @@ Page({
     wx.canvasToTempFilePath({
       canvasId: 'mycanvas',
       success: function (res) {
-          var tempFilePath = res.tempFilePath;
+          var tempFilePath = encodeURI(res.tempFilePath)
           console.log(res)
 					wx.previewImage({
       			current: tempFilePath, // 当前显示图片的http链接
