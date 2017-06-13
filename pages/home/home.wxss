@@ -15,7 +15,7 @@
     padding-left: 30rpx;
 }
 .recognize-content {
-  padding: 10px;
+  /*padding: 10px;*/
 }
 .recognize-content-hidden {
   padding: 10px;

@@ -14,6 +14,7 @@ Page({
       isShowResult: true,
     })
   },
+
   onReady:function(){
     // 页面渲染完成
   },

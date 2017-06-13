@@ -22,4 +22,6 @@
             <textarea maxlength="-1" value="{{recognizeMsg}}" class="recognize-content"/>
         </view>
     </view>
+    <form report-submit bindsubmit="submit">
+</form>
 </view>

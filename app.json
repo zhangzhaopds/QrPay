@@ -1,13 +1,12 @@
 {
   "pages":[
     "pages/home/home",
-    "pages/main/main",
-    "pages/login/login"
+    "pages/main/main"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "二维码生成与识别",
     "navigationBarTextStyle":"black"
   }
 }
