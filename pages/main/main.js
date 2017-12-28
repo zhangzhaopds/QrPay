@@ -26,21 +26,44 @@ Page({
   
   //点击图片进行预览，长按保存分享图片
   previewImg:function(e){
-    wx.canvasToTempFilePath({
-      canvasId: 'mycanvas',
+    wx.showActionSheet({
+      itemList: ['保存二维码'],
       success: function (res) {
-          var tempFilePath = encodeURI(res.tempFilePath)
-          console.log(res)
-					wx.previewImage({
-      			current: tempFilePath, // 当前显示图片的http链接
-      			urls: [tempFilePath] // 需要预览的图片http链接列表
-    			})
+        console.log(res.tapIndex)
+        if (res.tapIndex == 0) {
+          console.log('保存二维码')
+          wx.canvasToTempFilePath({
+            canvasId: 'mycanvas',
+            success: function (res) {
+              var tempFilePath = encodeURI(res.tempFilePath)
+              console.log(res)
+              wx.saveImageToPhotosAlbum({
+                filePath: res.tempFilePath,
+                success: function success(res) {
+                  console.log('saved::' + res.savedFilePath);
+                  wx.showToast({
+                    title: '保存成功',
+                  })
+                }
+              })
+            },
+            fail: function (res) {
+              console.log(res);
+              wx.showToast({
+                title: '保存失败',
+                icon: 'loading'
+              }),
+                setTimeout(function () {
+                  wx.hideLoading()
+                }, 2000)
+            }
+          });
+        }
       },
       fail: function (res) {
-          console.log(res);
+        console.log(res.errMsg)
       }
-    });
-    
+    })
   },
 
 })
